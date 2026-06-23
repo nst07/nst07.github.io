@@ -485,6 +485,43 @@ footer{background:var(--ink);color:#c9cbdd;}
   .menu-board{padding:22px;}
 }
 
+/* ============ VIDEO ============ */
+.video-section{background:var(--ink);}
+.video-section .section-head h2{color:var(--white);}
+.video-section .section-head p{color:#c9cbdd;}
+.video-wrap{margin-top:44px;}
+.video-container{
+  position:relative;
+  width:100%;
+  padding-top:56.25%;
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:3px solid #2a2d44;
+  box-shadow:8px 8px 0 #000;
+  background:#0d0e19;
+}
+.video-container iframe{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  border:none;
+}
+
+/* ============ GOOGLE FORM ============ */
+.gform-wrap{
+  background:var(--white);
+  border:3px solid var(--ink);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--hard-shadow);
+  position:relative;
+}
+.gform-wrap iframe{
+  display:block;
+  width:100%;
+  border:none;
+}
+
 /* focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible{
   outline:3px solid var(--blue); outline-offset:2px;
@@ -501,6 +538,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <span>Block <em>Rock</em></span>
     </a>
     <nav class="links">
+      <a href="#video">Video</a>
       <a href="#nosotros">Misión &amp; Valores</a>
       <a href="#catalogo">Salas &amp; Menú</a>
       <a href="#reservar">Reservar</a>
@@ -514,6 +552,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     </div>
   </div>
   <div class="mobile-panel" id="mobilePanel">
+    <a href="#video">Video</a>
     <a href="#nosotros">Misión &amp; Valores</a>
     <a href="#catalogo">Salas &amp; Menú</a>
     <a href="#reservar">Reservar</a>
@@ -546,6 +585,27 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
     <div class="stat"><b>120+</b><span>Juegos disponibles</span></div>
     <div class="stat"><b>11–02h</b><span>Abierto todos los días</span></div>
     <div class="stat"><b>1 Gbps</b><span>WiFi gratis en sala</span></div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="video-section section-pad" id="video">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow on-yellow">Block Rock en acción</span>
+      <h2>Mira cómo es jugar con nosotros.</h2>
+      <p>Un vistazo al ambiente, los setups y la experiencia que te espera.</p>
+    </div>
+    <div class="video-wrap">
+      <div class="video-container">
+        <iframe
+          loading="lazy"
+          src="https://canva.link/i0n1kzyp7ufy9lj"
+          allowfullscreen="allowfullscreen"
+          allow="fullscreen; autoplay">
+        </iframe>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -696,64 +756,18 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       </ul>
     </div>
 
-    <form class="card-form" id="reservaForm" name="reserva-block-rock" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="reserva-block-rock">
-      <p class="honeypot"><label>No llenar: <input name="bot-field"></label></p>
-
-      <div class="field-row">
-        <div class="field">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        </div>
-        <div class="field">
-          <label for="telefono">Teléfono</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="55 1234 5678" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" name="correo" placeholder="tu@correo.com" required>
-      </div>
-
-      <div class="field-row">
-        <div class="field">
-          <label for="sala">Tipo de sala</label>
-          <select id="sala" name="sala" required>
-            <option value="" disabled selected>Elige una sala</option>
-            <option>Retro Combo</option>
-            <option>Next-Gen Squad</option>
-            <option>VIP Streaming</option>
-            <option>Party Arcade</option>
-            <option>No estoy seguro, ayúdenme a elegir</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="jugadores">Número de jugadores</label>
-          <input type="number" id="jugadores" name="jugadores" min="1" max="8" placeholder="2" required>
-        </div>
-      </div>
-
-      <div class="field-row">
-        <div class="field">
-          <label for="fecha">Fecha</label>
-          <input type="date" id="fecha" name="fecha" required>
-        </div>
-        <div class="field">
-          <label for="hora">Hora</label>
-          <input type="time" id="hora" name="hora" required>
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="mensaje">Notas (opcional)</label>
-        <textarea id="mensaje" name="mensaje" placeholder="Juegos que quieren probar, ocasión especial, alergias para snacks, etc."></textarea>
-      </div>
-
-      <button type="submit" class="btn primary block">Reservar mi sala →</button>
-      <p class="form-note">Al enviar aceptas que te contactemos para confirmar tu reserva.</p>
-      <div id="formSuccess">¡Listo! Recibimos tu solicitud — te contactamos muy pronto. 🎮</div>
-    </form>
+    <div class="gform-wrap">
+      <iframe
+        src="https://docs.google.com/forms/d/e/1FAIpQLSegOIZDE_HIFfuMR0nqBJKyu4Qp9yJ2YlsF-d-P8kVj8uksWA/viewform?embedded=true"
+        width="100%"
+        height="820"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="Formulario de reserva Block Rock">
+        Cargando formulario…
+      </iframe>
+    </div>
   </div>
 </section>
 
@@ -831,22 +845,7 @@ tabBtns.forEach(btn => {
   });
 });
 
-// Formulario: feedback de envío (compatible con Netlify Forms)
-const reservaForm = document.getElementById('reservaForm');
-const formSuccess = document.getElementById('formSuccess');
-reservaForm.addEventListener('submit', function(e){
-  // En Netlify, el envío real lo maneja la plataforma (data-netlify="true").
-  // Si no está alojado en Netlify, evitamos el error 404 y mostramos confirmación local.
-  const isNetlify = window.location.hostname.includes('netlify.app') || window.location.hostname.includes('.');
-  if(!isNetlify || window.location.protocol === 'file:'){
-    e.preventDefault();
-  }
-  formSuccess.style.display = 'block';
-  formSuccess.scrollIntoView({behavior:'smooth', block:'nearest'});
-  if(e.defaultPrevented){
-    reservaForm.reset();
-  }
-});
+// Formulario gestionado por Google Forms (iframe embebido)
 </script>
 
 </body>
